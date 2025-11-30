@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Video Downloader</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+        h1 {
+            color: #ff0050;
+            text-align: center;
+        }
+        .input-group {
+            display: flex;
+            margin: 20px 0;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ff0050;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button {
+            background: #ff0050;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-left: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .info-box {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #00f2ea;
+        }
+        .download-btn {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            background: #00f2ea;
+            color: black;
+            padding: 12px;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 TikTok Video Downloader</h1>
+        
+        <div class="input-group">
+            <input type="text" id="tiktok-url" placeholder="Paste TikTok URL di sini...">
+            <button onclick="checkUrl()">Download</button>
+        </div>
+
+        <div class="info-box">
+            <p>Caranya:</p>
+            <ol>
+                <li>Buka TikTok → Share video → Copy link</li>
+                <li>Paste link di atas</li>
+                <li>Tap Download</li>
+            </ol>
+        </div>
+
+        <div class="result hidden" id="result">
+            <h3>Video Siap Download!</h3>
+            <button class="download-btn">Download Video (No Watermark)</button>
+            <button class="download-btn">Download MP3</button>
+        </div>
+    </div>
+
+    <script>
+        function checkUrl() {
+            const url = document.getElementById('tiktok-url').value;
+            const result = document.getElementById('result');
+            
+            if (url.includes('tiktok.com')) {
+                result.classList.remove('hidden');
+                alert('✅ Link TikTok valid! (Ini versi demo)');
+            } else {
+                alert('❌ Masukkan link TikTok yang valid!');
+            }
+        }
+    </script>
+</body>
+</html>
